@@ -6,35 +6,35 @@ public class CostumerVO {
     public  CostumerVO(){
     }
 
-    public CostumerVO(Integer idProduct, String nameProduct) {
-        this.idProduct = idProduct;
-        this.nameProduct = nameProduct;
+    public CostumerVO(Integer idCostumer, String nameCostumer) {
+        this.idCostumer = idCostumer;
+        this.nameCostumer = nameCostumer;
     }
 
-    private Integer idProduct;
-    private String nameProduct;
+    private Integer idCostumer;
+    private String nameCostumer;
 
-    public Integer getIdProduct() {
-        return idProduct;
+    public Integer getIdCostumer() {
+        return idCostumer;
     }
 
-    public void setIdProduct(Integer idProduct) {
-        this.idProduct = idProduct;
+    public void setIdCostumer(Integer idCostumer) {
+        this.idCostumer = idCostumer;
     }
 
-    public String getNameProduct() {
-        return nameProduct;
+    public String getNameCostumer() {
+        return nameCostumer;
     }
 
-    public void setNameProduct(String nameProduct) {
-        this.nameProduct = nameProduct;
+    public void setNameCostumer(String nameCostumer) {
+        this.nameCostumer = nameCostumer;
     }
 
     @Override
     public String toString() {
         return "CostumerVO{" +
-                "idProduct=" + idProduct +
-                ", nameProduct='" + nameProduct + '\'' +
+                "idCostumer=" + idCostumer +
+                ", nameCostumer='" + nameCostumer + '\'' +
                 '}';
     }
 }

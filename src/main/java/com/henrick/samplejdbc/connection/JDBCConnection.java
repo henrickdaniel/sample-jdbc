@@ -28,8 +28,8 @@ public class JDBCConnection {
         CostumerVO costumerVO;
         while (rs.next()){
             costumerVO = new CostumerVO();
-            costumerVO.setIdProduct(rs.getInt("idCostumer"));
-            costumerVO.setNameProduct(rs.getString("nmCostumer"));
+            costumerVO.setIdCostumer(rs.getInt("idCostumer"));
+            costumerVO.setNameCostumer(rs.getString("nmCostumer"));
             costumerVOS.add(costumerVO);
         }
 
