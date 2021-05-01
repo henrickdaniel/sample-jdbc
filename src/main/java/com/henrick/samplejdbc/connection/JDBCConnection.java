@@ -22,7 +22,7 @@ public class JDBCConnection {
         Class.forName("com.mysql.jdbc.Driver");
         conn = DriverManager.getConnection(URL);
         stmt = conn.createStatement();
-        final String query = "costumer";
+        final String query = "select * from costumer";
         final ResultSet rs = stmt.executeQuery(query);
 
         CostumerVO costumerVO;
