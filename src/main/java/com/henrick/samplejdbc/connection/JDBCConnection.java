@@ -36,4 +36,31 @@ public class JDBCConnection {
         return costumerVOS;
     }
 
+    public List<CostumerVO> loadWithTry() {
+        List<CostumerVO> costumerVOS = new ArrayList<>();
+        try{
+
+            Connection conn = null;
+            Statement stmt = null;
+
+            final String URL = JDBC + System.getenv("CLEARDB_DATABASE_URL");
+            Class.forName("com.mysql.jdbc.Driver");
+            conn = DriverManager.getConnection(URL);
+            stmt = conn.createStatement();
+            final String query = "select * from costumer";
+            final ResultSet rs = stmt.executeQuery(query);
+
+            CostumerVO costumerVO;
+            while (rs.next()){
+                costumerVO = new CostumerVO();
+                costumerVO.setIdCostumer(rs.getInt("idCostumer"));
+                costumerVO.setNameCostumer(rs.getString("nmCostumer"));
+                costumerVOS.add(costumerVO);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return costumerVOS;
+    }
+
 }
