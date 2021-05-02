@@ -20,7 +20,7 @@ public class SampleController {
 
     @GetMapping("/v2")
     public ResponseEntity testWithTry() throws Exception {
-        List<CostumerVO> costumers = new JDBCConnection().load();
+        List<CostumerVO> costumers = new JDBCConnection().loadWithTry();
         return new ResponseEntity<List<CostumerVO>>(costumers, HttpStatus.OK);
     }
 
