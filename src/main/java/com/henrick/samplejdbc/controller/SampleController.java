@@ -24,4 +24,10 @@ public class SampleController {
         return new ResponseEntity<List<CostumerVO>>(costumers, HttpStatus.OK);
     }
 
+    @GetMapping("/v3")
+    public ResponseEntity testWithDelay() throws Exception {
+        List<CostumerVO> costumers = new JDBCConnection().loadWithDelay();
+        return new ResponseEntity<List<CostumerVO>>(costumers, HttpStatus.OK);
+    }
+
 }
