@@ -33,6 +33,10 @@ public class JDBCConnection {
             costumerVOS.add(costumerVO);
         }
 
+        rs.close();
+        stmt.close();
+        conn.close();
+
         return costumerVOS;
     }
 
@@ -57,6 +61,9 @@ public class JDBCConnection {
                 costumerVO.setNameCostumer(rs.getString("nmCostumer"));
                 costumerVOS.add(costumerVO);
             }
+            rs.close();
+            stmt.close();
+            conn.close();
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -82,6 +89,10 @@ public class JDBCConnection {
             costumerVO.setNameCostumer(rs.getString("nmCostumer"));
             costumerVOS.add(costumerVO);
         }
+
+        rs.close();
+        stmt.close();
+        conn.close();
 
         return costumerVOS;
     }
